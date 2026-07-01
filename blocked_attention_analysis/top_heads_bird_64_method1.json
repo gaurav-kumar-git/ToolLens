@@ -1,0 +1,102 @@
+[
+    {
+        "layer": 0,
+        "head": 15,
+        "cumulative_score": 0.0021549710072577
+    },
+    {
+        "layer": 0,
+        "head": 9,
+        "cumulative_score": 0.0018119593150913715
+    },
+    {
+        "layer": 0,
+        "head": 11,
+        "cumulative_score": 0.0017847752897068858
+    },
+    {
+        "layer": 0,
+        "head": 17,
+        "cumulative_score": 0.0017029920127242804
+    },
+    {
+        "layer": 0,
+        "head": 8,
+        "cumulative_score": 0.0016583838732913136
+    },
+    {
+        "layer": 0,
+        "head": 14,
+        "cumulative_score": 0.0016365470364689827
+    },
+    {
+        "layer": 0,
+        "head": 13,
+        "cumulative_score": 0.0015996717847883701
+    },
+    {
+        "layer": 0,
+        "head": 23,
+        "cumulative_score": 0.0015361709520220757
+    },
+    {
+        "layer": 0,
+        "head": 12,
+        "cumulative_score": 0.0015208416152745485
+    },
+    {
+        "layer": 0,
+        "head": 22,
+        "cumulative_score": 0.0014899311354383826
+    },
+    {
+        "layer": 0,
+        "head": 3,
+        "cumulative_score": 0.0013691448839381337
+    },
+    {
+        "layer": 0,
+        "head": 19,
+        "cumulative_score": 0.0013151097809895873
+    },
+    {
+        "layer": 0,
+        "head": 16,
+        "cumulative_score": 0.0012947096256539226
+    },
+    {
+        "layer": 0,
+        "head": 27,
+        "cumulative_score": 0.0012939338339492679
+    },
+    {
+        "layer": 0,
+        "head": 5,
+        "cumulative_score": 0.0012163324281573296
+    },
+    {
+        "layer": 0,
+        "head": 18,
+        "cumulative_score": 0.0011838588397949934
+    },
+    {
+        "layer": 0,
+        "head": 26,
+        "cumulative_score": 0.0011775164166465402
+    },
+    {
+        "layer": 0,
+        "head": 25,
+        "cumulative_score": 0.0011723332572728395
+    },
+    {
+        "layer": 0,
+        "head": 4,
+        "cumulative_score": 0.0011549715418368578
+    },
+    {
+        "layer": 0,
+        "head": 24,
+        "cumulative_score": 0.001128514762967825
+    }
+]

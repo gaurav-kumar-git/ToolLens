@@ -1,0 +1,102 @@
+[
+    {
+        "layer": 14,
+        "head": 13,
+        "cumulative_score": 0.00037619873182848096
+    },
+    {
+        "layer": 13,
+        "head": 18,
+        "cumulative_score": 0.00035119347739964724
+    },
+    {
+        "layer": 13,
+        "head": 21,
+        "cumulative_score": 0.000335536286002025
+    },
+    {
+        "layer": 16,
+        "head": 8,
+        "cumulative_score": 0.000281508662737906
+    },
+    {
+        "layer": 13,
+        "head": 8,
+        "cumulative_score": 0.0002784093958325684
+    },
+    {
+        "layer": 13,
+        "head": 1,
+        "cumulative_score": 0.00027018922264687717
+    },
+    {
+        "layer": 13,
+        "head": 13,
+        "cumulative_score": 0.000264285656157881
+    },
+    {
+        "layer": 14,
+        "head": 29,
+        "cumulative_score": 0.00024276968906633556
+    },
+    {
+        "layer": 13,
+        "head": 2,
+        "cumulative_score": 0.00024058562121354043
+    },
+    {
+        "layer": 16,
+        "head": 1,
+        "cumulative_score": 0.00023853869060985744
+    },
+    {
+        "layer": 14,
+        "head": 20,
+        "cumulative_score": 0.00021614359866362065
+    },
+    {
+        "layer": 17,
+        "head": 29,
+        "cumulative_score": 0.00021408122847788036
+    },
+    {
+        "layer": 14,
+        "head": 22,
+        "cumulative_score": 0.00020742467313539237
+    },
+    {
+        "layer": 13,
+        "head": 4,
+        "cumulative_score": 0.00020343632786534727
+    },
+    {
+        "layer": 13,
+        "head": 6,
+        "cumulative_score": 0.00019966906984336674
+    },
+    {
+        "layer": 13,
+        "head": 16,
+        "cumulative_score": 0.00019932547002099454
+    },
+    {
+        "layer": 16,
+        "head": 25,
+        "cumulative_score": 0.00019691555644385517
+    },
+    {
+        "layer": 13,
+        "head": 3,
+        "cumulative_score": 0.00019565333786886185
+    },
+    {
+        "layer": 14,
+        "head": 31,
+        "cumulative_score": 0.0001739168365020305
+    },
+    {
+        "layer": 14,
+        "head": 30,
+        "cumulative_score": 0.00017223393660970032
+    }
+]

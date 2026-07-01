@@ -8,24 +8,57 @@ class RankGPTModel():
     def __init__(self,
                  base_llm_name,
                  sliding_window_size=20,
-                 sliding_window_stride=5,
+                 sliding_window_stride=10,
                  ) -> None:
         
         print(f"Loading Model: {base_llm_name} using Transformers...")
         self.base_llm_name = base_llm_name
-        
+        print(sliding_window_size, sliding_window_stride)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(base_llm_name)
-        self.model = transformers.AutoModelForCausalLM.from_pretrained(
-            base_llm_name,
-            torch_dtype=torch.bfloat16,
-            device_map="auto",
-            trust_remote_code=True
-        )
+        if 'qwen2.5-7b-instruct-1m' in base_llm_name.lower():
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                base_llm_name,
+                torch_dtype=torch.float16,
+                device_map="auto",
+                trust_remote_code=True
+            )
+        elif 'qwen' in base_llm_name.lower():
+            rope = {
+                "factor": 4.0,
+                "original_max_position_embeddings": 32768,
+                "type": "yarn"
+            }
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                base_llm_name,  
+                #  output_attentions = True,
+                dtype=torch.float16,  
+                local_files_only = True,
+                rope_scaling = rope
+            )
+            
+            # self.model = transformers.AutoModelForCausalLM.from_pretrained(
+            #     base_llm_name,
+            #     torch_dtype=torch.float16,
+            #     device_map="auto",
+            #     trust_remote_code=True
+            # )
+            # import ipdb; ipdb.set_trace()
+            print(self.model.config.rope_scaling)
+        else:
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                        base_llm_name,
+                        torch_dtype=torch.float16,
+                        device_map="auto",
+                        trust_remote_code=True
+                )
         self.model.eval()
 
         if 'llama-3' in base_llm_name.lower():
             self.prompt_prefix = '<|start_header_id|>user<|end_header_id|>'
             self.prompt_suffix = '<|eot_id|><|start_header_id|>assistant<|end_header_id|>'
+        if 'qwen' in base_llm_name.lower():
+            self.prompt_prefix = "<|im_start|>user\n"
+            self.prompt_suffix = "<|im_end|>\n<|im_start|>assistant\n"
         else:
             self.prompt_prefix = '[INST]'
             self.prompt_suffix = '[/INST]'
@@ -52,8 +85,9 @@ class RankGPTModel():
     def _get_sorted_docs_from_prompts(self, query, doc_pool):
         """Standard HF Generation"""
         prompt = self._create_prompt(query, doc_pool)
-        inputs = self.tokenizer(prompt, return_tensors='pt').to(self.model.device)
         
+        inputs = self.tokenizer(prompt, return_tensors='pt').to(self.model.device)
+        # import ipdb; ipdb.set_trace()
         max_new_tokens = max(100, len(doc_pool) * 5)
 
         with torch.no_grad():
